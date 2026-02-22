@@ -7,7 +7,9 @@ miles_until_next_service = 10000 - miles_since_service
 print ("Miles driven since last service:" , miles_since_service)
 print ("miles until next service:" , miles_until_next_service)
 
-if miles_until_next_service <=0:
+if miles_until_next_service <= 0:
     print ("Your car is overdue for a service!")
+elif miles_until_next_service <= 1000:
+    print ("Your service is due soon")
 else:
-    print ("you are not overdue yet.")
+    print ("There is no service due yet.")
