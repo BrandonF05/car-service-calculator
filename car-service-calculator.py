@@ -22,9 +22,12 @@ def main():
 
         if choice == "1":
             
-            
-            car_mileage = int(input("Enter your current cars mileage:"))
-            last_service = int(input("Enter your cars mileage at last service:"))
+            try:
+                car_mileage = int(input("Enter your current cars mileage:"))
+                last_service = int(input("Enter your cars mileage at last service:"))
+            except ValueError:
+                print("Please enter numbers only.")
+                continue
             
             miles_since_service, miles_until_next_service = calculate_service(car_mileage, last_service)
 
