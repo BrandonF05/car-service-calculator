@@ -12,15 +12,33 @@ def display_message (miles_until_next_service):
         print (f"you have {miles_until_next_service} miles until your next service")
 
 def main():
-    car_mileage = int(input("Enter your current cars mileage:"))
-    last_service = int(input("Enter your cars mileage at last service:"))
-    
-    miles_since_service, miles_until_next_service = calculate_service(car_mileage, last_service)
 
-    print ("miles driven since last service:", miles_since_service)
-    print ("miles until next service:", miles_until_next_service)
+    while True:
+        print ("\n Car Service Calculator")
+        print ("1. Check service status")
+        print ("2. Exit")
 
-    display_message (miles_until_next_service)
+        choice = input("Choose an option (1 or 2):")
+
+        if choice == "1":
+            
+            
+            car_mileage = int(input("Enter your current cars mileage:"))
+            last_service = int(input("Enter your cars mileage at last service:"))
+            
+            miles_since_service, miles_until_next_service = calculate_service(car_mileage, last_service)
+
+            print ("Miles driven since last service:", miles_since_service)
+            print ("Miles until next service:", miles_until_next_service)
+
+            display_message (miles_until_next_service)
+        
+        elif choice == "2" :
+            print ("Goodbye!")
+            break
+        
+        else:
+            print ("Invalid option. Try again")
 
 
 main()
